@@ -111,7 +111,7 @@ bot.on('guildMemberAdd', member => {
 let y = process.openStdin()
 y.addListener("data", res => {
   let x = res.toString().trim().split(/ +/g)
-  bot.channels.get("558116244822163487").send(x.join(" "));
+  bot.channels.get("561788556419530772").send(x.join(" "));
 })
 
 bot.on('message', async message => {
