@@ -172,29 +172,7 @@ if (mentioned) { // This will run if a member is mentioned
 
 
 }
-bot.on('messageDelete', async (message) => {
-	
 
-    const logs = message.guild.channels.find('name', 'mod-log');
-    const entry = await message.guild.fetchAuditLogs({
-        type: 'MESSAGE_DELETE'
-    }).then(audit => audit.entries.first())
-    let user;
-    if (entry.extra.channel.id === message.channel.id && (entry.target.id === message.author.id) && (entry.createdTimestamp > (Date.now() - 5000)) && (entry.extra.count >= 1)) {
-        user = entry.executor.username
-    } else {
-        user = message.author
-    }
-    const logembed = new discord.RichEmbed()
-        //.setTitle('Message Deleted')
-        .setAuthor(message.author.tag, message.author.displayAvatarURL)
-        .addField(`**Message sent by ${message.author.username} deleted in #${message.channel.name}**\n\n`, message.content)
-        .setColor()
-        .setFooter(`<#${message.channel.id}>`)
-        .setTimestamp()
-    //console.log(entry)
-    logs.send(logembed);;
-})
 });
 
 bot.login(process.env.token)
