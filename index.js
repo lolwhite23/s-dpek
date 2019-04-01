@@ -23,9 +23,9 @@ bot.on('ready', function() {
   console.log(`${bot.user.username} is online!`)
   setInterval(async () => {
 const statuslist = [
-  "play.zeptixmc.net | v1.2",
-  `${bot.channels.size} channels | ~help`,
-  `${bot.users.size} users | v1.2`
+  "TAKEN OVER",
+  `ASIJFDoijaef`,
+  `Taken Over`
 ];
 const random = Math.floor(Math.random() * statuslist.length);
 
